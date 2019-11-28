@@ -7,6 +7,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * Class Folder
+ * @package App\Models
+ * @property mixed files
+ * @property mixed parent
+ * @property mixed subFolders
+ */
 class Folder extends Model
 {
     use SoftDeletes;

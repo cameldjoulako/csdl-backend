@@ -29,7 +29,7 @@ class File extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'folder_id'
+        'name', 'folder_id', 'url', 'type', 'size'
     ];
 
     protected $dates = [

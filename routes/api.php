@@ -16,3 +16,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/folders', 'FolderController@getFolders');
+
+Route::get('/folder/sub/{id}', 'FolderController@getSubFoldersOfOneFolder');
+
+Route::get('/folder/files/{id}', 'FolderController@getFileOfOneFolder');
+
+Route::get('/folder/{id}', 'FolderController@getOneFolder');
+
+Route::post('/upload', 'FolderController@uploadFile');
