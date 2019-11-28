@@ -12,6 +12,18 @@ class Folder extends Model
     use SoftDeletes;
 
     /**
+     * The name of the table into the database
+     * @var string
+     */
+    protected $table = 'folder';
+
+    /**
+     * Use or not the timestamp
+     * @var bool
+     */
+    public $timestamps = true;
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
