@@ -19,15 +19,10 @@ class CreateFileTable extends Migration
             $table->string('type');
             $table->string('size');
             $table->string('url');
-            $table->string('folder_id')->nullable();
-            $table->string('user_id')->nullable();
+            $table->integer('folder_id')->unsigned()->nullable();
+            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
-        });
-
-        Schema::table('file', function (Blueprint $table) {
-            $table->foreign('folder_id')->references('id')->on('folder')->onDelete('restrict');
-            $table->foreign('user_id')->references('id')->on('user')->onDelete('restrict');
         });
     }
 

@@ -16,7 +16,7 @@ class CreateFolderTable extends Migration
         Schema::create('folder', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('parent_id')->nullable();
+            $table->integer('parent_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
