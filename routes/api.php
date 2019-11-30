@@ -25,4 +25,14 @@ Route::get('/folder/files/{id}', 'FolderController@getFileOfOneFolder');
 
 Route::get('/folder/{id}', 'FolderController@getOneFolder');
 
-Route::post('/upload', 'FolderController@uploadFile');
+/**
+ * Handle file's routes
+ */
+
+Route::get('/file/{id}', 'FileController@getOneFile');
+
+Route::get('/files', 'FileController@getFiles');
+
+Route::get('/file/get/{id}/{shouldDownload}', 'FileController@getFile');
+
+Route::post('/upload', 'FileController@uploadFile');

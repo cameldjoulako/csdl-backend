@@ -15,7 +15,7 @@ class File extends Model
      * The name of the table into the database
      * @var string
      */
-    protected $table = 'folder';
+    protected $table = 'file';
 
     /**
      * Use or not the timestamp

@@ -41,10 +41,10 @@ class FolderController extends Controller
                     'error' => 'The folder does not exist or the id is not a good one',
                     'message' => $ex->getMessage(),
                     'trace' => $ex->getTraceAsString(),
-                ]);
+                ], 500);
             return response()->json([
                 'error' => 'The folder does not exist or the id is not a good one'
-            ]);
+            ], 500);
         }
     }
 
@@ -61,10 +61,10 @@ class FolderController extends Controller
                     'error' => 'The folder does not exist or the id is not a good one',
                     'message' => $ex->getMessage(),
                     'trace' => $ex->getTraceAsString(),
-                ]);
+                ], 500);
             return response()->json([
                 'error' => 'The folder does not exist or the id is not a good one'
-            ]);
+            ], 500);
         }
     }
 
@@ -79,50 +79,10 @@ class FolderController extends Controller
                     'error' => 'The folder does not exist or the id is not a good one',
                     'message' => $ex->getMessage(),
                     'trace' => $ex->getTraceAsString(),
-                ]);
+                ], 500);
             return response()->json([
                 'error' => 'The folder does not exist or the id is not a good one'
-            ]);
-        }
-    }
-
-    /**
-     * Upload and Save a file
-     *
-     * @param Request $request
-     */
-    public function uploadFile(Request $request)
-    {
-        try {
-            $category = $request->category;
-            $uv = $request->uv;
-            $file = $request->file;
-
-            // Save the incoming file
-            $path = $file->store('IN4');
-
-            // Create and Save a new File object
-            $file = File::create([
-                'name' => $file->getClientOriginalName(),
-                'type' => $file->getClientOriginalExtension(),
-                'size' => $file->getSize,
-                'url' => $path,
-                'folder_id' => $category,
-                'user_id' => null,
-            ]);
-            return response()->json($file);
-        }
-        catch (\Exception $ex)
-        {
-            if(config('app.debug'))
-                return response()->json([
-                    'error' => 'The folder does not exist or the id is not a good one',
-                    'message' => $ex->getMessage(),
-                    'trace' => $ex->getTraceAsString(),
-                ]);
-            return response()->json([
-                'error' => 'The folder does not exist or the id is not a good one'
-            ]);
+            ], 500);
         }
     }
 }
