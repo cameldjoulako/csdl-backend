@@ -2,4 +2,5 @@
 
 ## About CSDL (Computer Sciences Digital Library)
 
-A project for IN4 to handle their files.
+A project for Master 1 Computer science at Universiy of Dschang.
+CSDL allow us to handle their files.
